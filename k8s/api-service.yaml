@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: agent-relay-api
+  namespace: agent-relay
+  labels:
+    app: agent-relay-api
+spec:
+  type: ClusterIP
+  selector:
+    app: agent-relay-api
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
